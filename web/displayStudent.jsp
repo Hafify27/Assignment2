@@ -8,10 +8,16 @@
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #FCCF31, #F55555);
-            height: 100vh;
+            min-height: 100vh;
+        }
+
+        /* Center everything */
+        .page-container {
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
 
         .card {
@@ -33,6 +39,7 @@
         .label {
             font-weight: 700;
             color: #444;
+            margin-top: 10px;
         }
 
         .value {
@@ -43,35 +50,69 @@
             border-left: 5px solid #FF5722;
         }
 
+        /* Button below card */
+        .action-btn {
+            margin-top: 25px;
+        }
+
+        .action-btn a {
+            text-decoration: none;
+            padding: 12px 25px;
+            background: #FF5722;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .action-btn a:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h2>Student Profile</h2>
+<div class="page-container">
 
-    <p class="label">Name:</p>
-    <p class="value">${name}</p>
+    <div class="card">
+        <h2>Student Profile</h2>
 
-    <p class="label">Student ID:</p>
-    <p class="value">${studentID}</p>
+        <div class="label">Name:</div>
+        <div class="value">${name}</div>
 
-    <p class="label">Program:</p>
-    <p class="value">${program}</p>
+        <div class="label">Student ID:</div>
+        <div class="value">${studentID}</div>
 
-    <p class="label">Email:</p>
-    <p class="value">${email}</p>
+        <div class="label">Program:</div>
+        <div class="value">${program}</div>
 
-    <p class="label">Hobbies:</p>
-    <p class="value">${hobbies}</p>
+        <div class="label">Email:</div>
+        <div class="value">${email}</div>
 
-    <p class="label">About Me:</p>
-    <p class="value">${intro}</p>
+        <div class="label">Hobbies:</div>
+        <div class="value">${hobbies}</div>
+
+        <div class="label">About Me:</div>
+        <div class="value">${intro}</div>
+    </div>
+
+    <div class="action-btn">
+        <a href="viewProfiles.jsp">View All Profiles</a>
+    </div>
+
 </div>
 
 </body>
